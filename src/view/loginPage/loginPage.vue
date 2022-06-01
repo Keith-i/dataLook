@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>数字{{ count }}</div>
-    <el-button @click="addCount">增加</el-button>
+    <el-button @click="addCount">增加数字</el-button>
   </div>
 </template>
 
