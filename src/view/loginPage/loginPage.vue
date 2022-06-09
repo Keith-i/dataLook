@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div>数字11{{ count }}</div>
-    <div>测试22{{ test }}</div>
+    <div>数字：{{ count }}</div>
+    <div>测试：{{ test }}</div>
     <el-button @click="addCount">增加数字</el-button>
   </div>
 </template>
