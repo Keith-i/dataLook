@@ -1,29 +1,28 @@
 <template>
   <div>
-    主体22{{ count }}
-    <el-button @click="addCount">增加+</el-button>
+    <div class="menubox">
+      <Menucom />
+    </div>
+    <div class="rightbox"></div>
   </div>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      test: 1,
-    }
+import { defineComponent } from 'vue'
+import Menucom from './components/menuCom.vue'
+
+export default defineComponent({
+  components: {
+    Menucom,
   },
-  created() {},
-  computed: {
-    count() {
-      return this.$store.state.count
-    },
+  setup() {
+    return {}
   },
-  methods: {
-    addCount() {
-      this.$store.commit('increment')
-    },
-  },
-}
+})
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.menubox {
+  width: 260px;
+}
+</style>
