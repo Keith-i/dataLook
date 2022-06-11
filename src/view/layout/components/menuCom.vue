@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-menu default-active="1" class="menubox">
+    <el-menu default-active="1" :collapse="collapse" class="menubox">
       <el-sub-menu index="1" v-for="i in 2" :key="i">
         <template #title>
           <el-icon><location /></el-icon>
@@ -25,7 +25,11 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  setup() {},
+  setup() {
+    return {
+      collapse: false
+    }
+  },
 })
 </script>
 
