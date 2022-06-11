@@ -13,7 +13,7 @@ import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 
 export default defineComponent({
   components: {
-    ElConfigProvider
+    ElConfigProvider,
   },
   setup() {
     return {
@@ -23,4 +23,4 @@ export default defineComponent({
 })
 </script>
 
-<style></style>
+<style lang="scss" scoped></style>

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-menu default-active="1">
-      <el-sub-menu index="1">
+    <el-menu default-active="1" class="menubox">
+      <el-sub-menu index="1" v-for="i in 2" :key="i">
         <template #title>
           <el-icon><location /></el-icon>
           <span>Navigator One</span>
@@ -29,4 +29,9 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.menubox {
+  height: 100vh;
+  overflow-y: scroll;
+}
+</style>
