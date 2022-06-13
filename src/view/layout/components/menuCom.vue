@@ -36,6 +36,6 @@ export default defineComponent({
 <style lang="scss" scoped>
 .menubox {
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 </style>
