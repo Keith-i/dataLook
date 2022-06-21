@@ -23,18 +23,18 @@ export default defineComponent({
 
     Object.keys(storeStateFns).forEach((fnKey) => {
       console.log(storeStateFns[fnKey], 1)
-      console.log(storeStateFns[fnKey].bind({$store: store}))
+      console.log(storeStateFns[fnKey].bind({ $store: store }))
       // const fn = storeStateFns[fnKey].bind({ $store: store })
       // console.log(fn)
       // storeState[fnKey] = computed(fn)
       // storeState[fnKey] = computed(storeStateFns[fnKey])
-      storeState[fnKey] = computed(storeStateFns[fnKey].bind({$store: store}))
+      storeState[fnKey] = computed(storeStateFns[fnKey].bind({ $store: store }))
     })
 
     return {
       count,
       addCount,
-      ...storeState
+      ...storeState,
     }
   },
 })
