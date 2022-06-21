@@ -4,6 +4,7 @@
     <div>测试：{{ test }}</div>
     <el-button @click="addCount">增加数字</el-button>
   </div>
+  <div>123123</div>
 </template>
 
 <script>
