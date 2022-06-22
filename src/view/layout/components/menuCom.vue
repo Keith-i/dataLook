@@ -27,7 +27,7 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   setup() {
     return {
-      collapse: false
+      collapse: false,
     }
   },
 })
