@@ -11,9 +11,16 @@ const routes = [
   {
     path: '/layout',
     meta: {
-        title: '主体'
+      title: '主体',
     },
     component: () => import('@/view/layout'),
+  },
+  {
+    path: '/test',
+    meta: {
+      title: '测试',
+    },
+    component: () => import('@/view/testPage'),
   },
 ]
 
