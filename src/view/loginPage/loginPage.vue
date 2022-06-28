@@ -2,6 +2,8 @@
   <div>
     <div>数字：{{ count }}</div>
     <div>测试：{{ test }}</div>
+    <img src="@/assets/logo.png" />
+    <img src="@/assets/img/zhonghang.png" />
     <el-button @click="addCount">增加数字</el-button>
   </div>
   <div>123123456</div>

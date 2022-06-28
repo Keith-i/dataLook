@@ -19,9 +19,18 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "@/styleScss/global.scss";'
-      }
-    }
+        additionalData: '@import "@/styleScss/global.scss";',
+      },
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        chunkFileNames: 'js/[name]-[hash].js',
+        entryFileNames: 'js/[name]-[hash].js',
+        assetFileNames: '[ext]/[name]-[hash].[ext]',
+      },
+    },
   },
   server: {
     host: '0.0.0.0',
