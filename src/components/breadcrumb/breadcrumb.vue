@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from 'vue'
+import { defineComponent, ref, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 export default defineComponent({
@@ -51,6 +51,18 @@ export default defineComponent({
       }
       pathCompile(path)
     }
+
+    // 侦听路由变化
+    watch(
+      () => router.currentRoute.value.path,
+      (newValue, oldValue) => {
+        console.log(newValue, oldValue)
+        getBreadcrumb()
+      },
+      {
+        immediate: true,
+      }
+    )
 
     onMounted(() => {
       getBreadcrumb()
