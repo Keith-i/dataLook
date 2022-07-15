@@ -25,7 +25,7 @@ let list = ref(Array.apply(null, { length: 81 }).map((_, index) => {
     number: (index % 9) + 1,
   }
 }))
-console.log(list.value)
+// console.log(list.value)
 
 // 测试reactive
 let reaData = reactive({

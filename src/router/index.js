@@ -12,14 +12,14 @@ const routes = [
     path: '/layout',
     redirect: '/layout/test',
     meta: {
-      name: '主体',
+      title: '主体',
     },
     component: () => import('@/view/layout'),
     children: [
       {
         path: '/layout/test',
         meta: {
-          name: '测试',
+          title: '测试',
         },
         component: () => import('@/view/testPage'),
       },
