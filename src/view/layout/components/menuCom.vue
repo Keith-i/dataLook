@@ -25,10 +25,14 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
+  props: {
+    collapse: {
+      type: Boolean,
+      default: false,
+    },
+  },
   setup() {
-    return {
-      collapse: false,
-    }
+    return {}
   },
 })
 </script>

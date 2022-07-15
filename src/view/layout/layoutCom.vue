@@ -1,9 +1,20 @@
 <template>
   <div class="outbox">
-    <div class="menubox">
-      <Menucom />
+    <!-- 菜单 -->
+    <div class="menubox" :class="!collapse ? 'bigmenu' : 'smmenu'">
+      <transition name="silder">
+        <Menucom :collapse="collapse" />
+      </transition>
     </div>
     <div class="rightbox">
+      <div>
+        <div class="right-top">
+          <el-icon class="icon" size="26px" @click="collapseFn">
+            <Fold v-if="collapse" />
+            <Expand v-else />
+          </el-icon>
+        </div>
+      </div>
       <div class="cc">
         <span v-for="i in 100" :key="i">测试</span>
       </div>
@@ -26,7 +37,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import Menucom from './components/menuCom.vue'
 
 export default defineComponent({
@@ -34,7 +45,16 @@ export default defineComponent({
     Menucom,
   },
   setup() {
-    return {}
+    // 是否缩小左侧菜单
+    let collapse = ref(false)
+    let collapseFn = () => {
+      collapse.value = !collapse.value
+    }
+
+    return {
+      collapse,
+      collapseFn,
+    }
   },
 })
 </script>
@@ -42,9 +62,15 @@ export default defineComponent({
 <style lang="scss" scoped>
 .menubox {
   flex-shrink: 0;
-  width: 260px;
   overflow: auto;
   box-sizing: border-box;
+  transition: width 0.28s;
+}
+.bigmenu {
+  width: 260px;
+}
+.smmenu {
+  width: 64px;
 }
 .cc {
   width: 1500px;
@@ -65,5 +91,13 @@ export default defineComponent({
   flex-basis: auto;
   overflow: auto;
   box-sizing: border-box;
+}
+.right-top {
+  height: 50px;
+}
+.icon {
+  height: 100%;
+  padding: 0 15px;
+  line-height: 46px;
 }
 </style>
