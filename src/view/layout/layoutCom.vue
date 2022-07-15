@@ -7,18 +7,22 @@
       </transition>
     </div>
     <div class="rightbox">
-      <div>
-        <div class="right-top">
+      <div class="right-top">
+        <div class="topcom">
+          <!-- 菜单开关 -->
           <el-icon class="icon" size="26px" @click="collapseFn">
             <Fold v-if="collapse" />
             <Expand v-else />
           </el-icon>
+          <!-- 面包屑导航 -->
+          <Breadcrumb />
         </div>
       </div>
       <div class="cc">
         <span v-for="i in 100" :key="i">测试</span>
       </div>
       <div>123123</div>
+      <router-view></router-view>
     </div>
   </div>
   <!-- <div>
@@ -39,10 +43,12 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import Menucom from './components/menuCom.vue'
+import Breadcrumb from '@/components/breadcrumb'
 
 export default defineComponent({
   components: {
     Menucom,
+    Breadcrumb,
   },
   setup() {
     // 是否缩小左侧菜单
@@ -92,10 +98,11 @@ export default defineComponent({
   overflow: auto;
   box-sizing: border-box;
 }
-.right-top {
+.topcom {
   height: 50px;
 }
 .icon {
+  float: left;
   height: 100%;
   padding: 0 15px;
   line-height: 46px;

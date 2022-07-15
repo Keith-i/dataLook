@@ -10,17 +10,20 @@ const routes = [
   },
   {
     path: '/layout',
+    redirect: '/layout/test',
     meta: {
-      title: '主体',
+      name: '主体',
     },
     component: () => import('@/view/layout'),
-  },
-  {
-    path: '/test',
-    meta: {
-      title: '测试',
-    },
-    component: () => import('@/view/testPage'),
+    children: [
+      {
+        path: '/layout/test',
+        meta: {
+          name: '测试',
+        },
+        component: () => import('@/view/testPage'),
+      },
+    ],
   },
 ]
 
