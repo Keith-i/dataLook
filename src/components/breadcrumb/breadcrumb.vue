@@ -29,7 +29,6 @@ export default defineComponent({
     // 设置面包屑导航
     let getBreadcrumb = () => {
       let matched = route.matched.filter((item) => item.meta && item.meta.title)
-      // const first = matched[0]
       levelList.value = matched.filter(
         (item) => item.meta && item.meta.title && item.meta.breadcrumb !== false
       )
