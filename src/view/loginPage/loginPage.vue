@@ -7,12 +7,17 @@
     <el-button @click="addCount">增加数字</el-button>
   </div>
   <div>123123456</div>
+  <contrastcom />
 </template>
 
 <script>
 import { defineComponent, computed } from 'vue'
 import { useStore, mapState } from 'vuex'
+import contrastcom from '../../components/contrastcom.vue'
 export default defineComponent({
+  components: {
+    contrastcom,
+  },
   setup() {
     const store = useStore()
     const count = computed(() => store.state.count)
