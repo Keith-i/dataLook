@@ -25,6 +25,13 @@ const routes = [
       },
     ],
   },
+  {
+    path: '/tailwindcss_test',
+    meta: {
+      title: 'tailwindcss测试',
+    },
+    component: () => import('@/view/tailwindcss_test'),
+  },
 ]
 
 let router = createRouter({
